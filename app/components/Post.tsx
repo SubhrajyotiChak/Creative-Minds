@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface PostProps {
-  id: number;
+  id: string;
   name: string;
   avatar: string;
   postTitle: string;

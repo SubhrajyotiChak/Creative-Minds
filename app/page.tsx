@@ -31,7 +31,7 @@ export default function Home() {
           name={post.user.name}
           avatar={post.user.image}
           postTitle={post.title}
-          comments={post.Comment}
+          comments={post?.Comment?.map(comment => comment.userId)}
         />
       ))}
     </main>

@@ -44,12 +44,16 @@ export default function EditPost({
         queryClient.invalidateQueries(["auth-posts"])
         toast.success("Post has been deleted.", { id: deleteToastID })
       },
+      // onSettled: () => {
+      //   toast.dismiss(deleteToastID)
+      // }
     }
   )
 
   const deletePost = () => {
     deleteToastID = toast.loading("Deleting your post.", { id: deleteToastID })
     mutate(id)
+    toast.dismiss(deleteToastID)
   }
   return (
     <>

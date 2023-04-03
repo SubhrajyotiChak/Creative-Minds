@@ -18,7 +18,7 @@ let toastPostID: string
     {
       onSuccess: () => {
         // Invalidate and refetch the posts list query
-        // queryClient.invalidateQueries(["posts"])
+        queryClient.invalidateQueries(["posts"])
         toast.success("Post has been made 🔥",{id:toastPostID})
         setTitle("")
         setIsDisabled(false)

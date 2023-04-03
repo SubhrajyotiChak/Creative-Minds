@@ -7,14 +7,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method === "GET") {
   const session = await getServerSession(req, res, authOptions);
-  if (!session) {
+  if (!session) 
     return res
       .status(401)
       .json({ message: "Please signin to create a post." });
-  }
+  
 
-  if (req.method === "GET") {
     try {
       const data = await prisma.user.findUnique({
         where: {
